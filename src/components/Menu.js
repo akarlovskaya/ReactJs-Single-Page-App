@@ -1,22 +1,24 @@
-// Menu is stateless component - no need state and life-cycle hooks
-import React from 'react';
-// import react's Link component to prevent whole page reload, only rendered content will be changed
-import { Link } from 'react-router-dom';
-import '../styles/menu.css'
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
+import Home from './pages/Home';
+import Speakers from './pages/Speakers';
 
-const Menu = () => {
-    return (
-        <header>
-            <nav>
-                <ul>
-                    <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/speakers'>Speakers</Link></li>
-                    <li><Link to='/about'>About</Link></li>
-                </ul>
-            </nav>
-        </header>
+class Menu extends Component {
+    render() {
+        return (
+            <div>
+                <nav>
+                    <ul>
+                        <li><NavLink to='/'>Homepage</NavLink></li>
+                        {/* <li><NavLink to='/articles'>Articles</NavLink></li> */}
+                        <li><NavLink to='/speakers'>Speakers</NavLink></li>
+                    </ul>
+                </nav>
+            </div>
 
-    )
+        )
+    }
+
 }
 
 export default Menu;

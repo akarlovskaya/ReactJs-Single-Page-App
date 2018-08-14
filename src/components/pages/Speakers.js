@@ -1,16 +1,32 @@
-import React from 'react';
-// in {} is named exports
-import { Switch, Route } from 'react-router-dom';
-import AllSpeakers from '../AllSpeakers';
-import Speaker from '../Speaker';
+import React, { Component } from 'react';
 
-const Speakers = () => {
-    return(
-        <Switch>
-            <Route exact path='/speakers' component={AllSpeakers} />
-            <Route path='/speakers/:name' component={Speaker} />
-        </Switch>
-    );
+class Speakers extends Component {
+    constructor(props) {
+        super(props);
+
+        // set initial state
+        this.state = {
+            allspeakers: []
+        }
+    };
+
+    componentDidMount() {
+        this.fetchData();
+    }
+
+    fetchData() {
+        fetch('https://randomuser.me/api/?results=10')
+            .then(response => response.json())
+            .then(data => console.log(data))
+    }
+
+    render() {
+        return(
+            <div>
+                <h1>Speakers page</h1>
+            </div>
+        )
+    }
 }
 
 export default Speakers;

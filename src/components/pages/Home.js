@@ -1,25 +1,12 @@
 import React from 'react';
-// add react-transition-group module to animate the Route Transitions
-import { CSSTransitionGroup } from 'react-transition-group';
-import '../../styles/home.css';
-import ArticleList from '../ArticleList';
-import articles from '../../articles-data.js';
+import Articles from '../Articles';
+import articles from '../../articles-data';
 
-
-const Home = () => {
-    return(
-        <CSSTransitionGroup
-            transitionName="homeTransition"
-            transitionAppear={true}
-            transitionAppearTimeout={500}
-            transitionEnter={false}
-            transitionLeave={false}>
-            <div>
-              <h1>Home</h1>
-              <ArticleList articles={articles} />
-            </div>
-        </CSSTransitionGroup>
-    );
-}
+const Home = () => (
+    <div>
+        <h1>Home page</h1>
+        <Articles articles={articles}/>
+    </div>
+);
 
 export default Home;
