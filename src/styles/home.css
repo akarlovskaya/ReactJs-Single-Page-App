@@ -7,25 +7,17 @@
     transition: all .5s ease-in-out;
 }
 
-/* .home {
-    display: flex;
-    justify-content: space-evenly;
-} */
-
-/* .home__main {
-    width: 60%;
-    max-width: 800px;
-} */
-
 .home__aside {
     width: 100%;
-    /* max-width: 300px; */
-    /* height: 119px; */
     text-align: center;
-    /* margin-top: 45px; */
     border: 1px solid rgba(0, 0, 0, 0.125);
     padding: 20px 15px;
     border-radius: 4px;
+}
+
+.home__main h1 {
+    text-align: center;
+    margin: 50px 0;
 }
 
 @media only screen and (min-width: 992px) {
@@ -42,7 +34,7 @@
         max-width: 300px;
         height: 119px;
         text-align: center;
-        margin-top: 45px;
+        margin-top: 136px;
         border: 1px solid rgba(0, 0, 0, 0.125);
         padding: 20px 15px;
         border-radius: 4px;

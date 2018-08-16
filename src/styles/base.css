@@ -2,7 +2,15 @@ body {
     color: #6A7076;
 }
 
+.btn-primary {
+    background-color: #331f1a;
+}
+
 .btn {
     padding: 7px 15px;
     border-radius: 4px;
+}
+
+.card-header {
+    background-color: #f9efe9;
 }

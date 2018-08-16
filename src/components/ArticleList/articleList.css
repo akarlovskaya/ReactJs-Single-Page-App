@@ -1,3 +1,7 @@
+.articleList__ul {
+    padding: 0;
+}
+
 .article-list__li {
     list-style: none;
 }

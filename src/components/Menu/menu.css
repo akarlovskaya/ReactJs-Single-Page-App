@@ -1,0 +1,13 @@
+header {
+    /* background-color: #ccc; */
+    padding: 20px 0;
+}
+
+ul {
+    margin: 0;
+}
+
+.active {
+    color: black;
+    text-decoration: underline;
+}
