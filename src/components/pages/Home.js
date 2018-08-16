@@ -3,6 +3,7 @@ import React from 'react';
 import { CSSTransitionGroup } from 'react-transition-group';
 import '../../styles/home.css';
 import ArticleList from '../ArticleList';
+import Subscribe from '../Subscribe';
 import articles from '../../articles-data.js';
 
 
@@ -14,9 +15,16 @@ const Home = () => {
             transitionAppearTimeout={500}
             transitionEnter={false}
             transitionLeave={false}>
-            <div>
-              <h1>Home</h1>
-              <ArticleList articles={articles} />
+
+            <div className="home">
+              <main className="home__main">
+                  <h1>Home</h1>
+                  <ArticleList articles={articles} />
+              </main>
+
+              <aside className="home__aside">
+                  <Subscribe />
+              </aside>
             </div>
         </CSSTransitionGroup>
     );
