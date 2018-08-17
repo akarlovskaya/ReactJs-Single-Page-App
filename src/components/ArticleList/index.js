@@ -12,7 +12,7 @@ import './articleList.css'
      );
 
   return (
-      <ul className="articleList__ul">
+      <ul className="article-list__ul">
           {articleElements}
       </ul>
   );

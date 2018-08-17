@@ -1,11 +1,11 @@
 import React from 'react';
 // add react-transition-group module to animate the Route Transitions
 import { CSSTransitionGroup } from 'react-transition-group';
-import '../../styles/home.css';
-import Jumbotron from '../../components/Jumbotron/Jumbotron';
-import ArticleList from '../ArticleList';
-import Subscribe from '../Subscribe';
-import articles from '../../articles-data.js';
+import './home.css';
+import Jumbotron from '../../../components/Jumbotron/Jumbotron';
+import ArticleList from '../../ArticleList';
+import Subscribe from '../../Subscribe';
+import articles from '../../../articles-data.js';
 
 
 const Home = () => {
@@ -18,7 +18,7 @@ const Home = () => {
             transitionLeave={false}>
 
             <Jumbotron />
-            
+
             <div className="home container">
               <main className="home__main">
                   <h1>Our Latest News</h1>

@@ -18,7 +18,9 @@ class Speaker extends Component {
                 </Link>
             </div>
             <div>
-                <h3 className="card-title">{speaker.name}</h3>
+                <Link to={`/speakers/${speaker.username}`}>
+                    <h3 className="card-title">{speaker.name}</h3>
+                </Link>
                 <p className="card-subtitle mb-2 text-muted">{speaker.email}</p>
                 <p className="card-text">{speaker.description}</p>
             </div>
