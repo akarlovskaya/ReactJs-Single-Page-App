@@ -9,7 +9,7 @@ const Menu = () => {
         <header className="container">
             <nav>
                 <ul className="nav">
-                    <li className="nav-item"><NavLink to='/' activeClassName="active">Home</NavLink></li>
+                    <li className="nav-item"><NavLink to='/home'>Home</NavLink></li>
                     <li className="nav-item"><NavLink to='/speakers'>Speakers</NavLink></li>
                     <li className="nav-item"><NavLink to='/about'>About</NavLink></li>
                 </ul>
