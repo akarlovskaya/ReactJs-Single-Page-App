@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Menu from './components/Menu/Menu';
-// import Jumbotron from './components/Jumbotron/Jumbotron';
 import Content from './components/Content';
 import Footer from './components/Footer';
 import './styles/base.css';
@@ -10,9 +9,8 @@ class App extends Component {
     return (
       <div>
           <Menu />
-          {/* <Jumbotron /> */}
           <Content />
-          {/* <Footer /> */}
+          <Footer />
       </div>
     );
   }
