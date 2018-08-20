@@ -1,33 +1,35 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import './speaker.css';
+import speakersData from '../../speakers-data';
 
-class Speaker extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const {speaker} = this.props;
+const SingleSpeaker = (username, props) => {
+    // return array with matched username speaker
+    const oneSpeaker = speakersData.filter(speaker => speaker.login.username === username.username);
+    const socials = oneSpeaker[0].socials;
+    const {twitter, linkedin, github} = socials;
 
     return (
-        <div className='speaker'>
-            <div className="speaker__img-wrapper">
-                <Link to={`/speakers/${speaker.username}`}>
-                    <img src={speaker.photo} alt={speaker.name}/>
-                </Link>
+        <section className="speaker">
+            <div className="speaker__info">
+                <div className="speaker__img-wrapper">
+                    <img src={oneSpeaker[0].picture.large} alt={oneSpeaker[0].name.first}/>
+                </div>
+                <div className="speaker__title-wrapper">
+                    <h3>{oneSpeaker[0].name.first} {oneSpeaker[0].name.last}</h3>
+                    <p>Company:  <span className="text-danger">{oneSpeaker[0].company}</span></p>
+                    <p className="text-primary">{oneSpeaker[0].location.country}, {oneSpeaker[0].location.city}</p>
+                    <p className="card-subtitle mb-2 text-muted">{oneSpeaker[0].email}</p>
+                    <ul className="title-wrapper__socials">
+                        <li><a href={twitter} className="twitter" target="_blank">twitter</a></li>
+                        <li><a href={linkedin} className="linkedin" target="_blank">linkedin</a></li>
+                        <li><a href={github} className="github" target="_blank">github</a></li>
+                    </ul>
+                </div>
             </div>
-            <div>
-                <Link to={`/speakers/${speaker.username}`}>
-                    <h3 className="card-title">{speaker.name}</h3>
-                </Link>
-                <p className="card-subtitle mb-2 text-muted">{speaker.email}</p>
-                <p className="card-text">{speaker.description}</p>
-            </div>
-
-        </div>
-    );
-  }
+            <p className="speaker__desctiption">{oneSpeaker[0].description}</p>
+        </section>
+    )
 }
 
-export default Speaker;
+export default SingleSpeaker;

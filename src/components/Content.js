@@ -3,7 +3,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import About from './pages/About';
-import AllSpeakers from './AllSpeakers';
+import AllSpeakers from './AllSpeakers/AllSpeakers';
 import Speaker from './Speaker/Speaker';
 
 const Content = () => {
