@@ -8,11 +8,11 @@ class AllSpeakers extends React.Component {
   render() {
     const { match } = this.props;
     const username = match.params.username;
-
+    
     return (
         <div className="container">
             {
-                username ? <SingleSpeaker username={username} /> : <ListOfSpeakers />
+                username ? <SingleSpeaker username={username}/> : <ListOfSpeakers />
             }
         </div>
     )

@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import './speaker.css';
 import speakersData from '../../speakers-data';
 
-const SingleSpeaker = (username, props) => {
+const SingleSpeaker = (props) => {
     // return array with matched username speaker
-    const oneSpeaker = speakersData.filter(speaker => speaker.login.username === username.username);
+    const oneSpeaker = speakersData.filter(speaker => speaker.login.username === props.username);
     const socials = oneSpeaker[0].socials;
     const {twitter, linkedin, github} = socials;
 
@@ -28,6 +28,7 @@ const SingleSpeaker = (username, props) => {
                 </div>
             </div>
             <p className="speaker__desctiption">{oneSpeaker[0].description}</p>
+            <Link to={`/speakers`}>Back</Link>
         </section>
     )
 }
