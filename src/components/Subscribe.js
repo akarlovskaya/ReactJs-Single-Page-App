@@ -1,17 +1,76 @@
 import React from 'react';
 
-const Subscribe = () => {
-  return (
-      <div>
-          <p>Subscribe to get our latest news</p>
-          <form className="input-group mb-3">
-              <input type="email" placeholder="Enter email" className="form-control form-control-sm"/>
-              <div className="input-group-append">
-                  <button type="submit" className="btn btn-primary">Send</button>
-              </div>
-          </form>
-      </div>
-  );
+class Subscribe extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+        emails: []
+    };
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+    const {emails} = this.state;
+    const newEmail = this.newEmail.value;
+
+    if ( newEmail !== '' ) {
+      this.setState({
+          emails: [...this.state.emails, newEmail]
+      });
+
+      this.showAlert('Success! You\'ve done it', 'alert text-success');
+    } else {
+        this.showAlert('Please enter email', 'alert text-danger');
+    }
+
+    e.target.reset();
+    console.log(this.state);
+  }
+
+
+  showAlert(msg, className) {
+    const alertEl = document.createElement('p');
+    const formEl = document.querySelector('form');
+
+    alertEl.className = className;
+    alertEl.appendChild(document.createTextNode(msg));
+    formEl.parentNode.insertBefore(alertEl, formEl.nextElementSibling);
+
+    setTimeout(() => {
+        this.removeAlert();
+    }, 3000);
+  }
+
+
+  removeAlert() {
+      const currentAlert = document.querySelector('.alert');
+      if (currentAlert) {
+          currentAlert.remove();
+      }
+  }
+
+
+  render() {
+    return (
+        <div>
+            <p>Subscribe to get our latest news</p>
+            <form onSubmit={e => this.handleSubmit(e)} className="input-group mb-3">
+                <input  id="emailInput"
+                        ref={input => this.newEmail = input
+                        }
+                        type="email"
+                        placeholder="Enter email"
+                        className="form-control form-control-sm"
+                    />
+                <div className="input-group-append">
+                    <button type="submit" className="btn btn-primary">Send</button>
+                </div>
+            </form>
+        </div>
+    );
+  }
 }
+
 
 export default Subscribe;
