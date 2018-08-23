@@ -1,0 +1,18 @@
+.comments {
+    padding: 100px 0;
+}
+
+.comment__userInfo .card-header {
+    display: flex;
+    align-items: center;
+    padding: 0 0 10px;
+}
+
+.comment__userInfo img {
+    max-width: 80px;
+}
+
+.comment__userInfo h4 {
+    margin: 16px 0 0;
+    text-transform: none;
+}

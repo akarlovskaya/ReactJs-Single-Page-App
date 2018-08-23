@@ -6,6 +6,9 @@ import Jumbotron from '../../../components/Jumbotron/Jumbotron';
 import ArticleList from '../../ArticleList';
 import Subscribe from '../../Subscribe';
 import articles from '../../../articles-data.js';
+// import AddComment from '../../AddComment';
+import CommentList from '../../CommentList/CommentList';
+import comments from '../../../comments-data.js';
 
 
 const Home = () => {
@@ -23,6 +26,8 @@ const Home = () => {
               <main className="home__main">
                   <h1>Our Latest News</h1>
                   <ArticleList articles={articles} />
+                  {/* <AddComment /> */}
+                  <CommentList comments={comments}/>
               </main>
 
               <aside className="home__aside">
