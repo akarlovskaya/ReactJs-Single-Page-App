@@ -7,12 +7,14 @@ class Subscribe extends React.Component {
     this.state = {
         emails: []
     };
+
+    this.emailInput = React.createRef();
   }
 
   handleSubmit(e){
     e.preventDefault();
     const {emails} = this.state;
-    const newEmail = this.newEmail.value;
+    const newEmail = this.emailInput.current.value;
 
     if ( newEmail !== '' ) {
       this.setState({
@@ -28,7 +30,6 @@ class Subscribe extends React.Component {
     console.log(this.state);
   }
 
-
   showAlert(msg, className) {
     const alertEl = document.createElement('p');
     const formEl = document.querySelector('form');
@@ -42,7 +43,6 @@ class Subscribe extends React.Component {
     }, 3000);
   }
 
-
   removeAlert() {
       const currentAlert = document.querySelector('.alert');
       if (currentAlert) {
@@ -50,18 +50,16 @@ class Subscribe extends React.Component {
       }
   }
 
-
   render() {
     return (
         <div>
             <p>Subscribe to get our latest news</p>
-            <form onSubmit={e => this.handleSubmit(e)} className="input-group mb-3">
-                <input  id="emailInput"
-                        ref={input => this.newEmail = input
-                        }
-                        type="email"
-                        placeholder="Enter email"
-                        className="form-control form-control-sm"
+            <form onSubmit={this.handleSubmit.bind(this)} className="input-group mb-3">
+                <input name="emailInput"
+                       ref={this.emailInput}
+                       type="email"
+                       placeholder="Enter email"
+                       className="form-control form-control-sm"
                     />
                 <div className="input-group-append">
                     <button type="submit" className="btn btn-primary">Send</button>
