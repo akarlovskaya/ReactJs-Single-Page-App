@@ -10,9 +10,6 @@
 .home__aside {
     width: 100%;
     text-align: center;
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    padding: 20px 15px;
-    border-radius: 4px;
 }
 
 .home__main h1 {
@@ -31,12 +28,7 @@
     }
     .home__aside {
         width: 30%;
-        max-width: 300px;
-        height: 119px;
-        text-align: center;
         margin-top: 136px;
-        border: 1px solid rgba(0, 0, 0, 0.125);
-        padding: 20px 15px;
-        border-radius: 4px;
+        margin-left: 35px;
     }
 }

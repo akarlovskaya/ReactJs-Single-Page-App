@@ -1,15 +1,18 @@
 import React from 'react';
+import './subscribe.css';
 
 class Subscribe extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-        emails: []
+        emails: [],
+        alerts: {}
     };
 
     this.emailInput = React.createRef();
   }
+
 
   handleSubmit(e){
     e.preventDefault();
@@ -18,41 +21,30 @@ class Subscribe extends React.Component {
 
     if ( newEmail !== '' ) {
       this.setState({
-          emails: [...this.state.emails, newEmail]
+          emails: [...this.state.emails, newEmail],
+          alerts: {
+              valid: "Success! You\'ve done it"
+          }
       });
+      console.log(this.state);
 
-      this.showAlert('Success! You\'ve done it', 'alert text-success');
     } else {
-        this.showAlert('Please enter email', 'alert text-danger');
+        this.setState({
+            alerts: {
+                invalid: "Please enter email"
+            }
+        });
+        console.log(this.state);
     }
 
     e.target.reset();
-    console.log(this.state);
-  }
-
-  showAlert(msg, className) {
-    const alertEl = document.createElement('p');
-    const formEl = document.querySelector('form');
-
-    alertEl.className = className;
-    alertEl.appendChild(document.createTextNode(msg));
-    formEl.parentNode.insertBefore(alertEl, formEl.nextElementSibling);
-
-    setTimeout(() => {
-        this.removeAlert();
-    }, 3000);
-  }
-
-  removeAlert() {
-      const currentAlert = document.querySelector('.alert');
-      if (currentAlert) {
-          currentAlert.remove();
-      }
   }
 
   render() {
+    const {alerts} = this.state;
+
     return (
-        <div>
+        <div className="subscribe">
             <p>Subscribe to get our latest news</p>
             <form onSubmit={this.handleSubmit.bind(this)} className="input-group mb-3">
                 <input name="emailInput"
@@ -61,11 +53,13 @@ class Subscribe extends React.Component {
                        placeholder="Enter email"
                        className="form-control form-control-sm"
                     />
-                    <div className="invalid-feedback">error</div>
                 <div className="input-group-append">
                     <button type="submit" className="btn btn-primary">Send</button>
                 </div>
             </form>
+            {
+                alerts.valid ? <p className="text-success">{alerts.valid}</p> : <p className="text-danger">{alerts.invalid}</p>
+            }
         </div>
     );
   }

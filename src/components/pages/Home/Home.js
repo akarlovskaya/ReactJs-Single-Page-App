@@ -4,7 +4,7 @@ import { CSSTransitionGroup } from 'react-transition-group';
 import './home.css';
 import Jumbotron from '../../../components/Jumbotron/Jumbotron';
 import ArticleList from '../../ArticleList';
-import Subscribe from '../../Subscribe';
+import Subscribe from '../../Subscribe/Subscribe';
 import articles from '../../../articles-data.js';
 import Sponsors from '../../Sponsors/Sponsors';
 

@@ -1,0 +1,15 @@
+.subscribe {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 4px;
+    padding: 20px;
+    height: 152px;
+}
+
+.subscribe p:first-child {
+    margin-top: 13px;
+}
+
+.text-success, .text-danger {
+    margin: 0;
+    padding: 0;
+}
