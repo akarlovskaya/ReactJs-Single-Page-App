@@ -61,6 +61,7 @@ class Subscribe extends React.Component {
                        placeholder="Enter email"
                        className="form-control form-control-sm"
                     />
+                    <div className="invalid-feedback">error</div>
                 <div className="input-group-append">
                     <button type="submit" className="btn btn-primary">Send</button>
                 </div>

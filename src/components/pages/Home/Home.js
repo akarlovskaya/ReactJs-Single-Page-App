@@ -6,6 +6,7 @@ import Jumbotron from '../../../components/Jumbotron/Jumbotron';
 import ArticleList from '../../ArticleList';
 import Subscribe from '../../Subscribe';
 import articles from '../../../articles-data.js';
+import Sponsors from '../../Sponsors/Sponsors';
 
 
 const Home = () => {
@@ -27,6 +28,7 @@ const Home = () => {
 
               <aside className="home__aside">
                   <Subscribe />
+                  <Sponsors />
               </aside>
             </div>
         </CSSTransitionGroup>
