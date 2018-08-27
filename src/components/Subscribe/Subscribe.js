@@ -1,5 +1,6 @@
 import React from 'react';
 import './subscribe.css';
+import classnames from 'classnames';
 
 class Subscribe extends React.Component {
   constructor(props) {
@@ -13,7 +14,6 @@ class Subscribe extends React.Component {
     this.emailInput = React.createRef();
   }
 
-
   handleSubmit(e){
     e.preventDefault();
     const {emails} = this.state;
@@ -26,22 +26,36 @@ class Subscribe extends React.Component {
               valid: "Success! You\'ve done it"
           }
       });
-      console.log(this.state);
-
     } else {
         this.setState({
             alerts: {
                 invalid: "Please enter email"
             }
         });
-        console.log(this.state);
     }
 
     e.target.reset();
+
+    setTimeout(() => {
+        const alertEl = document.querySelector('.subscribe-alert');
+        if (alertEl) {
+            alertEl.remove();
+        }
+    }, 2000);
+  }
+
+  removeAlert() {
+      const alertEl = document.querySelector('.subscribe-alert');
+
+      if (alertEl) {
+          alertEl.remove();
+      }
   }
 
   render() {
     const {alerts} = this.state;
+    const invalidMsg = alerts.invalid;
+    const validMsg = alerts.valid;
 
     return (
         <div className="subscribe">
@@ -57,13 +71,26 @@ class Subscribe extends React.Component {
                     <button type="submit" className="btn btn-primary">Send</button>
                 </div>
             </form>
-            {
-                alerts.valid ? <p className="text-success">{alerts.valid}</p> : <p className="text-danger">{alerts.invalid}</p>
-            }
+            <AlertMsg invalid={invalidMsg} valid={validMsg} />
         </div>
     );
   }
 }
-
-
 export default Subscribe;
+
+
+const AlertMsg = (props) => {
+    const { invalid, valid } = props;
+    let message = '';
+    message = (valid != undefined ? valid : invalid);
+
+    const alertCss = classnames({
+        'subscribe-alert': true,
+        'text-success': valid,
+        'text-danger': invalid
+    });
+
+    return (
+        <p className={alertCss}>{message}</p>
+    )
+}
