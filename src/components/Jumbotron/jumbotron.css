@@ -1,9 +1,0 @@
-.jumbotron-banner {
-    background: #c9e7dd url("banner.jpg") no-repeat bottom;
-    background-size: cover;
-    height: 300px;
-}
-
-.jumbotron-banner__text-wrapper {
-    padding-top: calc(300px - 177px);
-}
