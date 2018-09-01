@@ -28,6 +28,10 @@
     display: block;
 }
 
+input.form-control {
+    max-width: 400px;
+}
+
 @media only screen and (min-width: 420px) {
     .allSpeakers__title {
         display: flex;
@@ -36,5 +40,20 @@
     }
     .title__img {
         margin-right: 20px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .allSpeakers__wrapper {
+        display: flex;
+    }
+    main {
+        width: 60%;
+        max-width: 800px;
+    }
+    aside {
+        width: 30%;
+        margin-top: 136px;
+        margin-left: 35px;
     }
 }
