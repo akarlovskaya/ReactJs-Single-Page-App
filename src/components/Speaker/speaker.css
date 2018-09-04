@@ -28,6 +28,10 @@ img {
     margin-top: 35px;
 }
 
+.speaker a {
+    text-decoration: underline;
+}
+
 @media only screen and (min-width: 420px) {
     .speaker__info {
         display: flex;

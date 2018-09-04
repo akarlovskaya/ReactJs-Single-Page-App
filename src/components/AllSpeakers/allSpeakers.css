@@ -23,13 +23,41 @@
     text-transform: none;
 }
 
-.allSpeakers__info .card-link {
-    padding-top: 17px;
-    display: block;
+.allSpeakers__info .btn {
+    margin-top: 17px;
 }
 
 input.form-control {
-    max-width: 400px;
+    max-width: 300px;
+    border-color: #e6e5e5;
+    margin-right: 0 !important;
+    padding-left: 14px;
+}
+
+input.form-control:focus {
+    box-shadow: none;
+}
+
+legend {
+    font-size: 0.8rem;
+}
+
+.input-wrapper {
+    position: relative;
+    max-width: 300px;
+    display: flex;
+    border-color: #e6e5e5;
+}
+
+.form-group img {
+    border-radius: unset;
+    width: 20px;
+    margin-top: 14px;
+}
+
+.input-wrapper i {
+    position: absolute;
+    right: 12px;
 }
 
 @media only screen and (min-width: 420px) {
