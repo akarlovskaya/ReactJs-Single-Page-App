@@ -1,4 +1,5 @@
 import React from 'react';
+import './archive.css';
 
 class Archive extends React.Component {
   constructor(props) {
@@ -40,7 +41,7 @@ class Archive extends React.Component {
 
       if (this.state.archiveIsShown) {
           listOfEvents = (
-              <ul>
+              <ul  className="archive__events">
                   {
                       this.state.events.map(event => {
                           return(
@@ -58,10 +59,10 @@ class Archive extends React.Component {
       }
 
       return (
-          <div>
+          <div className="archive">
               <p>Semper debitis ex, id dolore accusam sed. Pro ad posse doctus, ridens prompta nam ex, cu cum suas mazim. Cu verear dissentiunt vix, ne affert graeco democritum sea. Sit nonumes verterem corrumpit id, altera latine has ex, no usu nobis propriae liberavisse. Et alienum hendrerit dissentiet sed. Wisi natum salutatus sed an. No vis reque rationibus, an alterum feugiat eum. Mei iudico salutandi vituperata ea, est ad illud harum oportere. Maluisset imperdiet torquatos eum at, ne pro tamquam oblique sententiae. Et virtute inimicus has. Quo at meis vulputate.</p>
               <p>See our events below</p>
-              <button onClick={this.clickHandler}>
+              <button onClick={this.clickHandler} className="btn btn-primary btn-sm">
                   {
                     !this.state.archiveIsShown ? 'Show archive' : 'Hide archive'
                   }
@@ -81,9 +82,9 @@ const ArchiveEvent = (props) => {
 
     return(
         <React.Fragment>
-            <BoxWrapper>
+            <FancyWrapper>
                 <h3>{`${city}, ${date}`}</h3>
-            </BoxWrapper>
+            </FancyWrapper>
                 <ul>
                     {
                         details.map(detail => {
@@ -101,15 +102,14 @@ const ArchiveEvent = (props) => {
 }
 
 // practicing to use {props.children}
-function BoxWrapper(props) {
-    const BoxWrapperStyle = {
-        border: '2px solid lavender',
+function FancyWrapper(props) {
+    const FancyWrapperStyle = {
         padding: '10px',
-        color: 'red'
+        marginBottom: '5px'
     }
 
     return (
-        <div style={BoxWrapperStyle}>
+        <div style={FancyWrapperStyle} className="gradient">
             {props.children}
         </div>
     )

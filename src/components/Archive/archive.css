@@ -1,0 +1,16 @@
+.archive__events {
+    max-width: 600px;
+    margin-right: auto;
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.archive__events h3 {
+    text-transform: none;
+    margin: 0;
+}
+
+.archive__events>li {
+    margin-bottom: 20px;
+}

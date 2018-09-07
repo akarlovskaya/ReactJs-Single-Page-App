@@ -14,3 +14,16 @@ body {
 .card-header {
     background-color: #f9efe9;
 }
+
+.gradient {
+    background: rgb(171, 214, 206);
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, rgba(171, 214, 206, 1) 0%, rgba(217, 235, 224, 1) 50%, rgba(248, 237, 227, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba(171, 214, 206, 1) 0%, rgba(217, 235, 224, 1) 50%, rgba(248, 237, 227, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, rgba(171, 214, 206, 1) 0%, rgba(217, 235, 224, 1) 50%, rgba(248, 237, 227, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#abd6ce', endColorstr='#f8ede3', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+}
