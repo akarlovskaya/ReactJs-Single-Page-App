@@ -1,5 +1,8 @@
 import React from 'react';
 import './archive.css';
+// add Radium package for css hovers
+import Radium from 'radium';
+import FancyWrapper from '../FancyWrapper';
 
 class Archive extends React.Component {
   constructor(props) {
@@ -38,6 +41,12 @@ class Archive extends React.Component {
   render() {
       const [ events ] = this.state.events;
       let listOfEvents = null;
+      const listStyle = {
+          backgroundColor: 'transparent',
+          ':hover': {
+              backgroundColor: '#f5ece3',
+          }
+      };
 
       if (this.state.archiveIsShown) {
           listOfEvents = (
@@ -45,7 +54,7 @@ class Archive extends React.Component {
                   {
                       this.state.events.map(event => {
                           return(
-                              <li key={event.id}>
+                              <li key={event.id} style={listStyle}>
                                   <ArchiveEvent
                                       eventData={event}
 
@@ -74,7 +83,8 @@ class Archive extends React.Component {
   }
 }
 
-export default Archive;
+export default Radium(Archive);
+
 
 const ArchiveEvent = (props) => {
     // console.log(props.eventData);
@@ -96,22 +106,6 @@ const ArchiveEvent = (props) => {
                         })
                     }
                 </ul>
-
         </React.Fragment>
     )
-}
-
-// practicing to use {props.children}
-function FancyWrapper(props) {
-    const FancyWrapperStyle = {
-        padding: '10px',
-        marginBottom: '5px'
-    }
-
-    return (
-        <div style={FancyWrapperStyle} className="gradient">
-            {props.children}
-        </div>
-    )
-
 }
