@@ -2,6 +2,10 @@ body {
     color: #6A7076;
 }
 
+h1 {
+    margin-bottom: 0;
+}
+
 .btn-primary {
     background-color: #331f1a;
 }

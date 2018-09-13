@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SingleSpeaker from '../Speaker/Speaker';
 import speakersData from '../../speakers-data';
+import FancyWrapper from '../FancyWrapper';
 import './allSpeakers.css';
 import '../../styles/base.css';
 
@@ -12,6 +13,9 @@ class AllSpeakers extends React.Component {
 
     return (
         <div className="container">
+            <FancyWrapper>
+                <h1>Our Speakers</h1>
+            </FancyWrapper>
             {
                 username ? <SingleSpeaker username={username}/> : <ListOfSpeakers />
             }
@@ -49,7 +53,6 @@ class ListOfSpeakers extends React.Component {
         return (
             <div className="allSpeakers__wrapper">
                 <main>
-                    <h1>Our Speakers</h1>
                     <form className="form-group my-2 my-lg-0">
                         <fieldset>
                             <legend>Search by name</legend>

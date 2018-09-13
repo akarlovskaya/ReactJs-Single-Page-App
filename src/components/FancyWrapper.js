@@ -4,7 +4,7 @@ import React from 'react';
 export const FancyWrapper = (props) => {
     const FancyWrapperStyle = {
         padding: '10px',
-        marginBottom: '5px'
+        marginBottom: '25px'
     }
 
     return (

@@ -1,10 +1,13 @@
 import React from 'react';
 import Archive from '../Archive/Archive';
+import FancyWrapper from '../FancyWrapper';
 
 const About = () => {
     return(
         <div className="container">
-            <h1>About</h1>
+            <FancyWrapper>
+                <h1>About</h1>
+            </FancyWrapper>
             <Archive />
         </div>
     );
