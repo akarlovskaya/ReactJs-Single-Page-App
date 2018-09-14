@@ -1,0 +1,11 @@
+.blog-wrapper h2 {
+    text-transform: none;
+}
+
+.blog-wrapper ul {
+    list-style: none;
+}
+
+.blog-wrapper li {
+    margin: 20px 0;
+}

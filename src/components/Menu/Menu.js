@@ -12,6 +12,7 @@ const Menu = () => {
                     <li className="nav-item"><NavLink to='/home'>Home</NavLink></li>
                     <li className="nav-item"><NavLink to='/speakers'>Speakers</NavLink></li>
                     <li className="nav-item"><NavLink to='/about'>About</NavLink></li>
+                    <li className="nav-item"><NavLink to='/blog'>Blog</NavLink></li>
                 </ul>
             </nav>
         </header>

@@ -5,6 +5,7 @@ import Home from './pages/Home/Home';
 import About from './pages/About';
 import AllSpeakers from './AllSpeakers/AllSpeakers';
 import Speaker from './Speaker/Speaker';
+import Blog from './pages/Blog/Blog';
 import NotFound from './pages/NotFound';
 
 const Content = () => {
@@ -20,6 +21,7 @@ const Content = () => {
             <Route path='/about' component={About} />
             <Route path='/speakers/:username' component={AllSpeakers} />
             <Route path='/speakers' component={AllSpeakers}/>
+            <Route path='/blog' component={Blog}/>
             <Route component={NotFound}/>
         </Switch>
     );
