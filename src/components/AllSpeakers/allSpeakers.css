@@ -75,7 +75,7 @@ legend {
     .allSpeakers__wrapper {
         display: flex;
     }
-    main {
+    /* main {
         width: 60%;
         max-width: 800px;
     }
@@ -83,5 +83,5 @@ legend {
         width: 30%;
         margin-top: 136px;
         margin-left: 35px;
-    }
+    } */
 }

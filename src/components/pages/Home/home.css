@@ -7,33 +7,8 @@
     transition: all .5s ease-in-out;
 }
 
-.home__aside {
-    width: 100%;
-    text-align: center;
-}
-
-.home__main h1 {
-    text-align: center;
-    margin: 50px 0;
-}
-
-.home__main h2 {
-    margin-bottom: 0;
-    line-height: 1.5;
-}
-
 @media only screen and (min-width: 992px) {
-    .home {
-        display: flex;
-        justify-content: space-evenly;
-    }
-    .home__main {
-        width: 60%;
-        max-width: 800px;
-    }
-    .home__aside {
-        width: 30%;
+    .home aside {
         margin-top: 136px;
-        margin-left: 35px;
     }
 }

@@ -9,6 +9,8 @@ const Blog = () => {
         return (
             <li key={post.id}>
                 <Post
+                    url={post.title}
+                    id={post.id}
                     title={post.title}
                     date={post.date}
                     body={post.body}

@@ -31,3 +31,33 @@ h1 {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#abd6ce', endColorstr='#f8ede3', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
 }
+
+aside {
+    width: 100%;
+    text-align: center;
+}
+
+main h1 {
+    text-align: center;
+    margin: 50px 0;
+}
+
+main h2 {
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+@media only screen and (min-width: 992px) {
+    .two-column {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    main {
+        width: 60%;
+        max-width: 800px;
+    }
+    aside {
+        width: 30%;
+        margin-left: 35px;
+    }
+}

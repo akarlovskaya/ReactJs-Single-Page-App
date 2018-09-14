@@ -2,6 +2,10 @@
     text-transform: none;
 }
 
+.blog-wrapper a {
+    text-decoration: underline;
+}
+
 .blog-wrapper ul {
     list-style: none;
     max-width: 900px;
@@ -10,7 +14,7 @@
 }
 
 .blog-wrapper li {
-    margin: 40px 0;
+    margin: 60px 0;
 }
 
 .blog-wrapper__content img {
