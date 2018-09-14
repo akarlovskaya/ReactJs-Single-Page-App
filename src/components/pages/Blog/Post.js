@@ -8,7 +8,9 @@ const Post = (props) => {
             <div className="blog-wrapper__text">
                 <h2>{props.title}</h2>
                 <span>{props.date}</span>
-                <p>{props.body}</p>
+                <p>{props.body}...
+                    <a href="">Read more</a>
+                </p>
             </div>
 
         </div>
